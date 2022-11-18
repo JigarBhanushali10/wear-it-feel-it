@@ -1,0 +1,43 @@
+{ "admin": [
+ 
+  {
+    "id": 1,
+    "email": "jigar",
+    "phoneNo": "1234567890",
+    "password": "1234",
+    "role": "admin"
+  },
+  {
+    "id": 2,
+    "email": "aman",
+    "phoneNo": "9876543210",
+    "password": "1234"
+  },
+  {
+    "email": "rajat",
+    "password": "1234",
+    "id": 3
+  },
+  {
+    "email": "pooja",
+    "password": "1234",
+    "id": 4
+  },
+  {
+    "email": "hiren",
+    "password": "hiren123",
+    "id": 5
+  },
+  {
+    "firstName": "ji",
+    "lastName": "ji",
+    "email": "ji.ji@gmail.com",
+    "phoneNo": "9663852741",
+    "dateOfBirth": "0005-12-15",
+    "gender": "male",
+    "password": "J@123",
+    "confirmPassword": "J@123",
+    "id": 6
+  }
+]
+}
