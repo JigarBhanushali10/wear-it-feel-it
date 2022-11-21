@@ -1,20 +1,22 @@
-import React from 'react'
 import RouterOutlet from '../../App.Routing'
-import Footer from './Footer'
 import Header from './Header'
+import Footer from './Footer'
+
 
 export default function Master() {
     return (
-        <div className='h-100 d-flex flex-column '>
-            <header className='border border-bottom-1 pb-4'>
+        <div className='h-100 d-flex flex-column container border p-0'>
+            <header className='border-1 border-bottom pb-4'>
                 <Header></Header>
             </header>
-            <main className='flex-grow-1'>
-                <RouterOutlet></RouterOutlet>
+            <main className='flex-grow-1 d-flex overflow-hidden'>
+                <div className='d-flex flex-column flex-grow-1 overflow-vertical'>
+                    <RouterOutlet></RouterOutlet>
+                    <footer className='bg-dark '>
+                        <Footer></Footer>
+                    </footer>
+                </div>
             </main>
-            <footer>
-                <Footer></Footer>
-            </footer>
         </div>
     )
 }

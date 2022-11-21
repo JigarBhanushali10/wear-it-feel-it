@@ -1,1 +1,29 @@
 // Global styles goes here
+
+html,
+body,
+#root {
+    height: 100%;
+    width: 100%;
+
+    overflow: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.overflow-vertical {
+    overflow-y: overlay;
+    overflow-x: hidden;
+}
+
+.overflow-horizontal {
+    overflow-x: overlay;
+    overflow-y: hidden;
+}
+
+.scroll-gutter-stable {
+    scrollbar-gutter: stable;
+}
