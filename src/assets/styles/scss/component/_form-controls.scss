@@ -1,2 +1,13 @@
 // Form controls styles goes here
+#globalSearch{
+    height: 40px;
+    width: 400px;
+}
+#globalSearch:focus{
+    outline: none;
+}
 
+.loginInput{
+    height: 56px;
+    outline: none;
+}
