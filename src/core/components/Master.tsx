@@ -5,8 +5,8 @@ import Footer from './Footer'
 
 export default function Master() {
     return (
-        <div className='h-100 d-flex flex-column container border p-0'>
-            <header className='border-1 border-bottom pb-4'>
+        <div className='h-100 d-flex flex-column border p-0'>
+            <header className='header bg-secondary pb-4'>
                 <Header></Header>
             </header>
             <main className='flex-grow-1 d-flex overflow-hidden'>

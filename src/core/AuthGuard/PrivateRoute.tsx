@@ -7,7 +7,7 @@ function PrivateRoute() {
 const location = useLocation()
     const { userAuthData } = useContext(AuthContext)
     return <>
-        {userAuthData ? <Outlet/> : <Navigate to="/login/signIn" replace  state={{path:location.pathname}}/>}
+        {userAuthData ? <Outlet/> : <Navigate to="/login" replace  state={{path:location.pathname}}/>}
     </>
 }
 

@@ -1,5 +1,5 @@
 import { onAuthStateChanged } from 'firebase/auth';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createContext, useState } from "react";
 import { auth } from '../services/Firebase.config';
 
@@ -21,16 +21,19 @@ function AuthProvider(props: AuthContextProvider) {
     const [userAuthData, setUserAuthData] = useState({})
     function storeUserAuthData(userAuthData: any) {
         if (userAuthData) setUserAuthData(JSON.stringify(userAuthData))
-        console.log(userAuthData);
         localStorage.setItem('accessToken', userAuthData?.user?.accessToken);
     }
-    onAuthStateChanged(auth, (currentUser: any) => {
-        setUserAuthData(currentUser)
-    })
     const userDataContext = {
         userAuthData,
-        storeUserAuthData: storeUserAuthData,
+        storeUserAuthData,
     };
+    useEffect(() => {
+        onAuthStateChanged(auth, (currentUser: any) => {
+            setUserAuthData(currentUser)
+        })
+        return () => {
+        }
+    }, [userAuthData])
 
     return (
         <AuthContext.Provider value={userDataContext}>
