@@ -9,6 +9,9 @@ import { LoginVideo } from '../shared/components/LoginVideo';
 
 
 function Login() {
+    const navigate = useNavigate()
+    const location = useLocation()
+    const redirectPath = location.state?.path
 
     /**
      * @name initialValues
@@ -29,14 +32,6 @@ function Login() {
         signInPassword: Yup.string().required('Password is Required'),
     })
 
-
-    /**
-    * @name onSubmit
-    * @param values.resetForm:string
-    * @description submits form and add employee and updates emp details according to condition
-    */
-  
-
     /**
     * @name renderError
     * @param message:string
@@ -44,21 +39,23 @@ function Login() {
     */
     const renderError = (message: string) => <p className="text-danger">{message}</p>;
 
-    const navigate = useNavigate()
-    const location = useLocation()
-    const redirectPath = location.state?.path
 
-    const onSubmit = ( values: any, resetForm: () => void) => {
-            authService.signIn(values).then(() => {
-                resetForm();
-                navigate(redirectPath);
-            })
-      
+    /**
+   * @name onSubmit
+   * @param values.resetForm:string
+   * @description submits form and  navigates to home 
+   */
+    const onSubmit = (values: any, resetForm: () => void) => {
+        authService.signIn(values).then(() => {
+            resetForm();
+            navigate(redirectPath);
+        })
+
     };
-    
+
 
     return (
-        <div className=' p-4 flex-grow-1 '>
+        <div className=' p-4 flex-grow-1 container'>
             <div className='row align-items-center py-1 h-100'>
                 <div className='col-12 col-sm-7 col-xl-3  mx-auto'>
                     <div className='loginComponent '>
@@ -74,14 +71,14 @@ function Login() {
                                 onSubmit(values, resetForm);
                             }}>
                             <Form className='row mb-3'>
-
                                 <div className='col-12  my-2 '>
-
-                                    <Field type="text" name="signInEmail" id="signInEmail" className='loginInput border border-dark px-3  text-secondary w-100' placeholder='Enter Email' />
+                                    {/* login email field */}
+                                    <Field type="text" name="signInEmail" id="signInEmail" className='loginInput border border-dark px-3  text-dark w-100' placeholder='Enter Email' />
                                     <ErrorMessage name='signInEmail' render={renderError} />
                                 </div>
                                 <div className='col-12 my-2 '>
-                                    <Field type="password" name="signInPassword" id="signInPassword" className='loginInput border border-dark px-3  text-secondary w-100' placeholder='Enter Password' />
+                                    {/* login password field */}
+                                    <Field type="password" name="signInPassword" id="signInPassword" className='loginInput border border-dark px-3  text-dark w-100' placeholder='Enter Password' />
                                     <ErrorMessage name='signInPassword' render={renderError} />
                                 </div>
                                 <div>

@@ -1,12 +1,11 @@
 // Form controls styles goes here
 #globalSearch {
     height: 40px;
-    width: 0;
+    width: 400px;
     transition: all .6s;
     
     &:focus {
         outline: none;
-        width: 600px;
     }
 }
 

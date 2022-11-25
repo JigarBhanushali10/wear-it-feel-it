@@ -1,1 +1,47 @@
 // Card styles goes here
+
+.product-img-container {
+    height: 400px;
+    overflow: hidden;
+
+    img,
+    .product-card-controls,
+    .product-card-price {
+        transition: ease-in-out all .6s;
+    }
+
+    .product-card-controls {
+        bottom: 30%;
+        opacity: 0;
+    }
+
+    .product-card-price {
+        bottom: 2%;
+    }
+
+    &:hover {
+        img {
+            transform: translateX(-400px);
+        }
+        
+        .product-card-controls {
+            bottom: 50%;
+            opacity: 1;
+            z-index: 99;
+        }
+        
+        .product-card-price {
+            bottom: 5%;
+        }
+    }
+}
+
+@include media-breakpoint-up(sm) {
+  
+
+    .product-card-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+}

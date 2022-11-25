@@ -9,8 +9,9 @@ import { LoginVideo } from '../shared/components/LoginVideo';
 
 function SignUp() {
 
-    const { storeUserAuthData } = useContext(AuthContext)
 
+    const { storeUserAuthData } = useContext(AuthContext)
+    const navigate = useNavigate()
     const location = useLocation()
     const redirectPath = location.state?.path
 
@@ -41,7 +42,7 @@ function SignUp() {
     /**
     * @name onSubmit
     * @param values.resetForm:string
-    * @description submits form and add employee and updates emp details according to condition
+    * @description submits form and add user data to AuthContext navigates to home
     */
     const onSubmit = (values: any, resetForm: () => void) => {
 
@@ -59,9 +60,8 @@ function SignUp() {
     * @description renders validation of form usin yup library
     */
     const renderError = (message: string) => <p className="text-danger">{message}</p>;
-    const navigate = useNavigate()
     return (
-        <div className=' p-4 flex-grow-1 '>
+        <div className=' p-4 flex-grow-1 container'>
             <div className='row align-items-center py-1 h-100'>
                 <div className='col-12 col-sm-7 col-xl-3  mx-auto'>
                     <div className='loginComponent '>
@@ -79,23 +79,28 @@ function SignUp() {
                             <Form className='row mb-3'>
 
                                 <div className='col-12 col-sm-6 my-2 '>
-                                    <Field type="text" name="signupName" id="signupName" className='loginInput border border-dark px-3  text-secondary w-100' placeholder='Enter Name' />
+                                    {/* signup name field */}
+                                    <Field type="text" name="signupName" id="signupName" className='loginInput border border-dark px-3  text-dark w-100' placeholder='Enter Name' />
                                     <ErrorMessage name='signupName' render={renderError} />
                                 </div>
                                 <div className='col-12 col-sm-6 my-2 '>
 
-                                    <Field type="text" name="signupEmail" id="signupEmail" className='loginInput border border-dark px-3  text-secondary w-100' placeholder='Enter Email' />
+                                    {/* signup email field */}
+                                    <Field type="text" name="signupEmail" id="signupEmail" className='loginInput border border-dark px-3  text-dark w-100' placeholder='Enter Email' />
                                     <ErrorMessage name='signupEmail' render={renderError} />
                                 </div>
                                 <div className='col-12 my-2 '>
-                                    <Field type="password" name="signupPassword" id="signupPassword" className='loginInput border border-dark px-3  text-secondary w-100' placeholder='Enter Password' />
+                                    {/* signup password field */}
+                                    <Field type="password" name="signupPassword" id="signupPassword" className='loginInput border border-dark px-3  text-dark w-100' placeholder='Enter Password' />
                                     <ErrorMessage name='signupPassword' render={renderError} />
                                 </div>
                                 <div className='col-12 my-2 '>
-                                    <Field type="password" name="signupComfirmPassword" id="signupComfirmPassword" className='loginInput border border-dark px-3  text-secondary w-100' placeholder='Enter Confirm Password' />
+                                    {/* signup confirm password field */}
+                                    <Field type="password" name="signupComfirmPassword" id="signupComfirmPassword" className='loginInput border border-dark px-3  text-dark w-100' placeholder='Enter Confirm Password' />
                                     <ErrorMessage name='signupComfirmPassword' render={renderError} />
                                 </div>
                                 <div className='col-12 mt-3 '>
+                                    {/* signup confirm button */}
                                     <button type="submit" className='w-100 btn btn-dark  rounded-0  px-5 py-3 '>Sign Up</button>
                                 </div>
                             </Form>
