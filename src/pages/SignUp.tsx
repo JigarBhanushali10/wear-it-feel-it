@@ -61,8 +61,8 @@ function SignUp() {
     */
     const renderError = (message: string) => <p className="text-danger">{message}</p>;
     return (
-        <div className=' p-4 flex-grow-1 container'>
-            <div className='row align-items-center py-1 h-100'>
+        <div className=' p-4 flex-grow-1 bg-secondary'>
+            <div className='container row align-items-center mx-md-auto py-1 h-100'>
                 <div className='col-12 col-sm-7 col-xl-3  mx-auto'>
                     <div className='loginComponent '>
                         <h1>

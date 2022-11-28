@@ -8,16 +8,16 @@ function LatestArraival() {
             <span className='text-muted'>Fifa season Latest Jerseys</span>
             <div className='row g-3 my-4'>
 
-                <div className=' col-sm-6 col-xl-3 '>
+                <div className=' col-sm-6 col-lg-3 '>
                     <ProductCard />
                 </div>
-                <div className=' col-sm-6 col-xl-3 '>
+                <div className=' col-sm-6 col-lg-3 '>
                     <ProductCard />
                 </div>
-                <div className=' col-sm-6 col-xl-3 '>
+                <div className=' col-sm-6 col-lg-3 '>
                     <ProductCard />
                 </div>
-                <div className=' col-sm-6 col-xl-3 '>
+                <div className=' col-sm-6 col-lg-3 '>
                     <ProductCard />
                 </div>
             </div>

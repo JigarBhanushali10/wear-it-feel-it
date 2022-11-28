@@ -1,7 +1,6 @@
 // Card styles goes here
 
 .product-img-container {
-    height: 400px;
     overflow: hidden;
 
     img,
@@ -21,15 +20,15 @@
 
     &:hover {
         img {
-            transform: translateX(-400px);
+            transform: translateX(-100%);
         }
-        
+
         .product-card-controls {
             bottom: 50%;
             opacity: 1;
             z-index: 99;
         }
-        
+
         .product-card-price {
             bottom: 5%;
         }
@@ -37,11 +36,48 @@
 }
 
 @include media-breakpoint-up(sm) {
-  
+
 
     .product-card-container {
         display: flex;
         justify-content: center;
         flex-direction: column;
+    }
+}
+
+
+.banner-image-container {
+    position: relative;
+
+    img {
+        z-index: 6;
+        position: relative;
+    }
+
+    &::before {
+        content: '';
+        z-index: 1;
+        position: absolute;
+        height: 50%;
+        width: 50%;
+        top: 25%;
+        right: 25%;
+        opacity: .20;
+        border-radius: 100%;
+        background-color: $primary;
+        animation: crescendo 1.5s alternate infinite ease-in;
+
+    }
+
+
+}
+
+@keyframes crescendo {
+    0% {
+        transform: scale(.8);
+    }
+
+    100% {
+        transform: scale(1.5);
     }
 }

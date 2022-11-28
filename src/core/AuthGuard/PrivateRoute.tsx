@@ -12,7 +12,7 @@ function PrivateRoute() {
     //authcontext varia userAuthData to checkautheication 
     const { userAuthData } = useContext(AuthContext)
     return <>
-        {userAuthData ? <Outlet /> : <Navigate to="/login" replace state={{ path: location.pathname }} />}
+        {userAuthData ? <Outlet /> : <Navigate to="/redirect" replace state={{ path: location.pathname }} />}
     </>
 }
 

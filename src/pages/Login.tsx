@@ -55,8 +55,8 @@ function Login() {
 
 
     return (
-        <div className=' p-4 flex-grow-1 container'>
-            <div className='row align-items-center py-1 h-100'>
+        <div className=' p-4 flex-grow-1 bg-secondary'>
+            <div className='container row align-items-center py-1 h-100 mx-md-auto'>
                 <div className='col-12 col-sm-7 col-xl-3  mx-auto'>
                     <div className='loginComponent '>
                         <h1>

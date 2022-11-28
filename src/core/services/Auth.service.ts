@@ -1,5 +1,5 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { auth } from "./Firebase.config";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { auth, provider } from "./Firebase.config";
 
 /**
  * @name signUp
@@ -14,23 +14,23 @@ const signUp = async (data: any) => {
         auth,
         email,
         password
-        )
-        return currentUser
-        
-    }
-    
-    /**
-     * @name logOut
-     * @description calls signOut method  of fire base to log out user 
-     */
-    const logOut = async () => signOut(auth)
-    
-    /**
-     * @name signIn
-     * @param data 
-     * @description signInWithEmailAndPassword firebase method which posts user data with auth configs
-     * @returns promise
-     */
+    )
+    return currentUser
+
+}
+
+/**
+ * @name logOut
+ * @description calls signOut method  of fire base to log out user 
+ */
+const logOut = async () => signOut(auth)
+
+/**
+ * @name signIn
+ * @param data 
+ * @description signInWithEmailAndPassword firebase method which posts user data with auth configs
+ * @returns promise
+ */
 const signIn = async (data: any) => {
     const email = data.signInEmail
     const password = data.signInPassword
@@ -38,12 +38,15 @@ const signIn = async (data: any) => {
     return userPromise
 }
 
-
+const signInWithGoogleAccount = () => {
+    return signInWithPopup(auth, provider)
+}
 
 const authService = {
     signIn,
     signUp,
-    logOut
+    logOut,
+    signInWithGoogleAccount
 }
 
 export default authService

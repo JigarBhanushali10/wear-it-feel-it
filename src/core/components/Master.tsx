@@ -7,7 +7,7 @@ export default function Master() {
     return (
         <div className='h-100 d-flex flex-column border p-0'>
             {/* header */}
-            <header className='header bg-secondary pb-4'>
+            <header className='header bg-secondary pb-4 '>
                 <Header></Header>
             </header>
             <main className='flex-grow-1 d-flex overflow-hidden'>

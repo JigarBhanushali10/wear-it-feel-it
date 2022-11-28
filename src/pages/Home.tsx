@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import wallpaperImage1 from '../assets/images/home1wallpaper1.png'
 import Amenities from '../shared/components/Amenities'
+import Banners from '../shared/components/Banners';
 import LatestArraival from '../shared/components/LatestArraival'
+import { scrollsection } from '../shared/components/ProductCard';
 
 function Home() {
+  const myRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className='flex-grow-1'>
@@ -19,7 +22,7 @@ function Home() {
               <h2 className='slider-heading-2'>
                 Discover Latest Club & Country Jerseys
               </h2>
-              <button className='btn btn-outline-primary px-lg-5 py-lg-3 mt-4 fs-lg-4 rounded-pill '>
+              <button className='btn btn-outline-primary px-lg-5 py-lg-3 mt-4 fs-lg-4 rounded-pill ' onClick={() => scrollsection(myRef)}>
                 Explore Now
               </button>
             </div>
@@ -31,6 +34,7 @@ function Home() {
             </figure>
           </div>
         </div>
+
       </section>
       <section className='amenities '>
         <div className='container'>
@@ -38,9 +42,14 @@ function Home() {
         </div>
       </section>
       <section className='last-arraivals '>
-        <div className='container'>
+        <div className='container' ref={myRef}>
           <LatestArraival />
         </div>
+      </section>
+      <section className='banners-section'>
+
+        <Banners />
+
       </section>
 
     </div>
