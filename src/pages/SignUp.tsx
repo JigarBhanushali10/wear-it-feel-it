@@ -7,7 +7,7 @@ import authService from '../core/services/Auth.service';
 import { LoginVideo } from '../shared/components/LoginVideo';
 
 
-function SignUp() {
+const SignUp=()=> {
 
 
     const { storeUserAuthData } = useContext(AuthContext)

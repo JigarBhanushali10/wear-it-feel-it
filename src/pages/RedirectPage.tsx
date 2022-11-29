@@ -1,10 +1,10 @@
-import React, { useContext, useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router'
 import { AuthContext } from '../core/context/AuthContext'
 import authService from '../core/services/Auth.service'
 
 
-function RedirectPage() {
+const RedirectPage=()=> {
     const location = useLocation()
     const navigate = useNavigate()
     const { storeUserAuthData } = useContext(AuthContext)
@@ -25,7 +25,7 @@ function RedirectPage() {
         })
         return () => {
         }
-    }, [])
+    }, [redirectPath,storeUserAuthData,navigate])
     return (
         <div className='h-100'>Redirecting...</div>
     )

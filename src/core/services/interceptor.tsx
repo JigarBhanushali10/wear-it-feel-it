@@ -47,6 +47,7 @@ const AuthInterceptor = () => {
                     console.log("an unknown error occurred");
                     break;
             }
+            setloader(false)
             return Promise.reject(error)
         })
     return null

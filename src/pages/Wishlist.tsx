@@ -1,5 +1,5 @@
 
-function Wishlist() {
+const Wishlist=()=> {
   return (
     <div>Wishlist</div>
   )

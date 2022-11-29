@@ -2,9 +2,8 @@ import { useEffect } from "react"
 import httpServices from "../shared/services/demoservices"
 
 
-function Cart() {
+const Cart=()=> {
   useEffect(() => {
-
     httpServices.getUsers().then(res=> console.log(res)
     )
     return () => {

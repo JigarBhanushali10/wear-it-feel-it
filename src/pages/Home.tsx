@@ -1,11 +1,13 @@
-import React, { useRef } from 'react'
-import wallpaperImage1 from '../assets/images/home1wallpaper1.png'
-import Amenities from '../shared/components/Amenities'
+import { useRef } from 'react';
+import wallpaperImage1 from '../assets/images/home1wallpaper1.png';
+import Amenities from '../shared/components/Amenities';
 import Banners from '../shared/components/Banners';
-import LatestArraival from '../shared/components/LatestArraival'
+import LatestArraival from '../shared/components/LatestArraival';
+import { LoginVideo } from '../shared/components/LoginVideo';
 import { scrollsection } from '../shared/components/ProductCard';
+import SeasonSale from '../shared/components/SeasonSale';
 
-function Home() {
+const Home = () => {
   const myRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -47,11 +49,14 @@ function Home() {
         </div>
       </section>
       <section className='banners-section'>
-
         <Banners />
-
       </section>
-
+      <section className='bg-info my-4'>
+        <div className='container'>
+          {/* <LoginVideo /> */}
+        <SeasonSale/>
+        </div>
+      </section>
     </div>
   )
 }

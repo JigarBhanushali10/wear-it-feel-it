@@ -8,7 +8,7 @@ import { LoginVideo } from '../shared/components/LoginVideo';
 
 
 
-function Login() {
+const Login=()=> {
     const navigate = useNavigate()
     const location = useLocation()
     const redirectPath = location.state?.path
@@ -49,7 +49,8 @@ function Login() {
         authService.signIn(values).then(() => {
             resetForm();
             navigate(redirectPath);
-        })
+        }).catch(error => console.error(error)
+        )
 
     };
 

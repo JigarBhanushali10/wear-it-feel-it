@@ -3,6 +3,6 @@ import * as React from 'react';
 export const ReactContext = React.createContext()
 
 
-const Provider = ReactContext.Provider
+const LoaderProvider = ReactContext.Provider
 
-export { Provider };
+export { LoaderProvider };

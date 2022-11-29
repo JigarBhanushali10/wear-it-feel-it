@@ -1,8 +1,7 @@
-import React from 'react'
 import { useNavigate } from 'react-router'
 import authService from '../core/services/Auth.service'
 
-function Profile() {
+const Profile=()=> {
   const navigate = useNavigate()
 
     const handleLogout = () => {
