@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <div className='flex-grow-1'>
       {/* hero section */}
-      <section className=' bg-secondary '>
+      <section className=' py-5 bg-secondary '>
         <div className=' container row pt-4 mx-auto'>
           <div className="col-12 col-sm-6 d-flex justify-content-center justify-content-xxl-end align-items-center">
             {/* slider headings and button */}
@@ -38,22 +38,21 @@ const Home = () => {
         </div>
 
       </section>
-      <section className='amenities '>
+      <section className='py-5 amenities '>
         <div className='container'>
           <Amenities />
         </div>
       </section>
-      <section className='last-arraivals '>
+      <section className='py-5 last-arraivals '>
         <div className='container' ref={myRef}>
           <LatestArraival />
         </div>
       </section>
-      <section className='banners-section'>
+      <section className='py-5 banners-section'>
         <Banners />
       </section>
-      <section className='bg-info my-4'>
+      <section className='my-5 bg-info my-4'>
         <div className='container'>
-          {/* <LoginVideo /> */}
         <SeasonSale/>
         </div>
       </section>

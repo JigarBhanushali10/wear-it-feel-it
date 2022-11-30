@@ -52,23 +52,9 @@
     img {
         z-index: 6;
         position: relative;
-        // scale: 1.1
     }
 
-    &::before {
-        content: '';
-        z-index: 1;
-        position: absolute;
-        height: 50%;
-        width: 50%;
-        top: 25%;
-        right: 25%;
-        opacity: .20;
-        border-radius: 100%;
-        background-color: $primary;
-        animation: inOut 1.5s alternate infinite ease-in;
 
-    }
 
 
 }
@@ -83,5 +69,240 @@
     }
 }
 
+.banner-card {
+    display: flex;
+}
+
+.banner-container div:nth-child(2) .banner-card {
+    flex-direction: column;
+}
+
+.banner-container div:nth-child(4) .banner-card {
+    flex-direction: column-reverse;
+    margin-top: -23% !important;
+}
+
+.banner-container div:nth-child(6) .banner-card {
+    margin-top: -23% !important;
+    flex-direction: column;
+}
 
 
+
+.banner-image-container::before {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    opacity: .20;
+    border-radius: 100%;
+    background-color: $primary;
+}
+
+.card1 {
+    grid-area: card1;
+    .banner-image-container {
+        align-self: flex-end;
+
+        &::before {
+            bottom: -10%;
+            left: 25%;
+            height: 200px;
+            width: 200px;
+
+        }
+    }
+}
+
+.card2 {
+    grid-area: card2;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .card-details {
+        padding: 3rem 0;
+    }
+
+    .banner-image-container {
+        &::before {
+            height: 300px;
+            width: 300px;
+            bottom: 10%;
+        }
+    }
+}
+
+.card3 {
+    grid-area: card3;
+
+    .banner-image-container {
+        align-self: flex-end;
+
+        &::before {
+            height: 200px;
+            width: 200px;
+            top: -10%;
+            right: -10%;
+
+        }
+    }
+
+}
+
+.card4 {
+    grid-area: card4;
+    flex-direction: column-reverse;
+
+    .card-details {
+        padding: 3rem 0;
+    }
+
+    .banner-image-container {
+        &::before {
+            height: 300px;
+            width: 300px;
+            top: 10%;
+            left: 100%;
+
+        }
+    }
+}
+
+.card5 {
+    grid-area: card5;
+
+    .banner-image-container {
+        align-self: flex-end;
+
+        &::before {
+            bottom: -20%;
+            left: -150%;
+            height: 200px;
+            width: 200px;
+
+        }
+    }
+
+}
+
+.card6 {
+    grid-area: card6;
+    flex-direction: column;
+
+    .card-details {
+        padding: 3rem 0;
+    }
+
+    .banner-image-container {
+        &::before {
+            // bottom: -10%;
+            top: -100%;
+            right: 50%;
+            height: 400px;
+            width: 400px;
+
+        }
+    }
+
+    justify-content: space-between;
+}
+
+.grid-container {
+    display: grid;
+    padding: 0;
+    grid-template-areas:
+        'card1  card2   card3 '
+        'card4  card2  card6'
+        'card4  card5 card6';
+    gap: 10px;
+    background-color: #ffffff;
+    // padding: 10px;
+    // height: 400px;
+
+
+}
+
+.grid-container>div {
+    background-color: $secondary;
+    text-align: center;
+    // padding: 1rem 0 0 0;
+    // justify-content: space-between;
+
+    display: flex;
+    align-items: center;
+
+
+    &>.banner-image-container {
+        max-width: 240px;
+
+    }
+
+}
+
+.shine {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        background: linear-gradient(to right,
+                fade_out(#fff, 1) 0%,
+                fade_out(#fff, 0.7) 100%);
+        content: "";
+        display: block;
+        height: 100%;
+        left: -90%;
+        position: absolute;
+        top: 0;
+        transform: skewX(-25deg);
+        width: 70%;
+        z-index: 55;
+    }
+    
+   
+    &:hover,
+    &:focus {
+        &::before {
+            animation: shine 0.9s ;
+        }
+    }
+    
+    @keyframes shine {
+        100% {
+            left: 125%;
+        }
+    }
+}
+
+
+
+
+
+.seasonSaleProductImageCntainer {
+    max-width: 600px;
+    position: relative;
+    overflow: hidden;
+
+    img {
+        position: relative;
+        z-index: 2;
+    }
+
+    &::before {
+        content: '';
+        z-index: 1;
+        position: absolute;
+        height: 50%;
+        width: 50%;
+        top: 30%;
+        right: 25%;
+        opacity: .20;
+        border-radius: 100%;
+        background-color: $primary;
+        animation: inOut 1.8s alternate infinite ease-in;
+
+    }
+}
+
+.timer {
+    height: 80px;
+    width: 80px;
+}
