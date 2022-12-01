@@ -1,7 +1,5 @@
-import React from 'react'
+import CountdownTimer from './CountDownTimer'
 const saleImage = require('../../assets/images/8.jpg')
-
-
 
 const SeasonSale = () => {
     return (
@@ -22,74 +20,21 @@ const SeasonSale = () => {
                 <div className='my-4'>
 
                     <div className='d-flex align-items-center'>
-                        <span className='mx-3 text-primary fw-bolder fs-1'>
+                        <span className='me-3 text-primary fw-bolder fs-2'>
                             ₹4999
                         </span>
-                        <span className='mx-3 fs-4'> <s>₹5999</s></span>
-                        <button className='mx-3 btn btn-primary rounded-pill px-4 py-2 fs-5'>Buy Now</button>
+                        <span className='mx-3 fs-4 text-decoration-line-through'>&nbsp;₹5999 &nbsp; </span>
+                        <button className='m-3 btn btn-primary rounded-pill px-4 py-2 fs-5'>Buy Now</button>
                     </div>
                 </div>
                 <div className='my-4'>
                     <div className='fw-bold'>Ends in</div>
-                    <div className='d-flex align-items-baseline'>
-                        <div className='mx-3 d-flex flex-column align-items-center'>
-                            <div className='timer d-flex justify-content-center align-items-center rounded-circle bg-white fs-2'>
-                                <span>
-                                    11
-                                </span>
-                            </div>
-                            <div>
-                                DAYS
-                            </div>
-
-                        </div>
-                        <div>
-                            :
-                        </div>
-                        <div className='mx-3 d-flex flex-column align-items-center'>
-                            <div className='timer d-flex justify-content-center align-items-center rounded-circle bg-white fs-2'>
-                                <span>
-                                    23
-                                </span>
-                            </div>
-                            <div>
-                                HRS
-                            </div>
-
-                        </div>
-                        <div>
-                            :
-                        </div>
-                        <div className='mx-3 d-flex flex-column align-items-center'>
-                            <div className='timer d-flex justify-content-center align-items-center rounded-circle bg-white fs-2'>
-                                <span>
-                                    58
-                                </span>
-                            </div>
-                            <div>
-                                MINS
-                            </div>
-
-                        </div>
-                        <div>
-                            :
-                        </div>
-                        <div className='mx-3 d-flex flex-column align-items-center'>
-                            <div className='timer d-flex justify-content-center align-items-center rounded-circle bg-white fs-2'>
-                                <span>
-                                    21
-                                </span>
-                            </div>
-                            <div>
-                                SECS
-                            </div>
-
-                        </div>
-                    </div>
+                    
+                    <CountdownTimer  />
                 </div>
             </div>
             <div className='col-md-6'>
-                <figure className='seasonSaleProductImageCntainer px-5'>
+                <figure className='seasonSaleProductImageCntainer px-5 m-0'>
                     <img src={saleImage} alt="" className='img-fluid px-5' />
                 </figure>
             </div>

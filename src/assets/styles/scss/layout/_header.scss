@@ -1,13 +1,17 @@
 // Header area style
 
-.header{
-    position: relativea;
-    z-index: 999;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)
+.header {
+    position: relative;
+    z-index: 99;
+
+    .header-cart {
+        top: -40%;
+        right: -40%;
+    }
 }
+
 // .flex-item:nth-child(1) { order: 1; }
 // .flex-item:nth-child(2) { order: 2; }
 // .flex-item:nth-child(3) { order: 3; }
 // .flex-item:nth-child(4) { order: 4; }
 // .flex-item:nth-child(5) { order: 5; }
-

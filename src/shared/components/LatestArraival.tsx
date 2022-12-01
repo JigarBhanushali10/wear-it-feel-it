@@ -35,20 +35,41 @@ function LatestArraival() {
             price:'4999.00',
             productName:'Belgium Home 2022/23'
         },
+        {
+            id: 5,
+            jersey1: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9f63b43565544975bb1bae99012ddfdd_9366/Belgium_22_Home_Jersey_Red_HD9412_22_model.jpg',
+            jersey2: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/eec0db7b8349444f87aeae99012de913_9366/Belgium_22_Home_Jersey_Red_HD9412_23_hover_model.jpg',
+            price:'4999.00',
+            productName:'Belgium Home 2022/23'
+        },
+        {
+            id: 6,
+            jersey1: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9f63b43565544975bb1bae99012ddfdd_9366/Belgium_22_Home_Jersey_Red_HD9412_22_model.jpg',
+            jersey2: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/eec0db7b8349444f87aeae99012de913_9366/Belgium_22_Home_Jersey_Red_HD9412_23_hover_model.jpg',
+            price:'4999.00',
+            productName:'Belgium Home 2022/23'
+        },
+        {
+            id: 7,
+            jersey1: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9f63b43565544975bb1bae99012ddfdd_9366/Belgium_22_Home_Jersey_Red_HD9412_22_model.jpg',
+            jersey2: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/eec0db7b8349444f87aeae99012de913_9366/Belgium_22_Home_Jersey_Red_HD9412_23_hover_model.jpg',
+            price:'4999.00',
+            productName:'Belgium Home 2022/23'
+        },
 
     ]
     return (
-        <>
+        <div className='py-5'>
             <h3>Latest Arraivals</h3>
             <span className='text-muted'>Fifa season Latest Jerseys</span>
-            <div className='row g-3 my-4'>
+            <div className='row g-3 my-4 justify-content-center'>
                 {jerserysArry.map((item:any)=>{
                     return ( <div className=' col-sm-6 col-lg-3 ' key={item.id}>
                     <ProductCard jersey1={item.jersey1} jersey2={item.jersey2} price={item.price} productName={item.productName}  />
                 </div> )
                 })}
             </div>
-        </>
+        </div>
     )
 }
 

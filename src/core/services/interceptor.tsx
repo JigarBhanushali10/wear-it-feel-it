@@ -1,14 +1,10 @@
 import axios from "axios";
 import { useContext } from "react";
 import { ReactContext } from "../../shared/contexts/ReactContext";
-// import { ReactContext } from "../../shared/components/ReactContext";
-
 
 /**
  * axious interceptor
  */
-
-
 const AuthInterceptor = () => {
     const {setloader} = useContext(ReactContext)
 

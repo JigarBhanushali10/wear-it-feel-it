@@ -1,5 +1,5 @@
 import React from 'react'
-import img1 from '../../assets/images/7.png'
+import img1 from '../../assets/images/9.png'
 import img2 from '../../assets/images/11.png'
 import img3 from '../../assets/images/messi4.png'
 import img4 from '../../assets/images/12.png'
@@ -61,7 +61,7 @@ const bannerCard = [
 
 function Banners() {
   return (
-    <div className='banner-container container row pt-4 mx-auto'>
+    <div className='banner-container container row py-5 mx-auto'>
       <div className="grid-container">
         {bannerCard.map((item: any) => {
           return (
