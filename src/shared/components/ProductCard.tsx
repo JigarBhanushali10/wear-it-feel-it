@@ -5,11 +5,9 @@ export const scrollsection = ((ref: any) => ref?.current?.scrollIntoView({ behav
 
 function ProductCard(props: any) {
 
-    const {itemsCount, items, setItems } = useContext(CartContext)
+    const { setItems } = useContext(CartContext)
     const addToCart = () => {
         setItems(props)
-        console.log(items);
-        console.log(itemsCount);
 
     }
 
