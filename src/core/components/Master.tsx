@@ -1,15 +1,15 @@
 import RouterOutlet from '../../App.Routing'
 import Header from './Header'
 import Footer from './Footer'
-import { CartStore } from '../../shared/contexts/CartContext'
+// import { CartStore } from '../../shared/contexts/CartContext'
 
 
 export default function Master() {
     return (
         <div className='h-100 d-flex flex-column  p-0'>
-            <CartStore>
+            {/* <CartStore> */}
                {/* header */}
-                <header className='header bg-secondary py-4 shadow'>
+                <header className='header bg-secondary shadow'>
                     <Header />
                 </header>
                 <main className='flex-grow-1 d-flex overflow-hidden'>
@@ -22,7 +22,7 @@ export default function Master() {
                         </footer>
                     </div>
                 </main>
-            </CartStore>
+            {/* </CartStore> */}
         </div >
     )
 }

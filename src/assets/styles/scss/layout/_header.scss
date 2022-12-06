@@ -4,9 +4,62 @@
     position: relative;
     z-index: 99;
 
-    .header-cart {
-        top: -40%;
+    .header-cart-badge {
+        top: 16%;
         right: -40%;
+        height: 20px;
+        width: 20px;
+    }
+
+    .icon-cart-container:hover+.header-cart {
+        height: auto;
+        opacity: 1;
+        // display: block;
+    }
+
+
+    // .header-cart:hover{
+    //     height: auto    ;
+    //     opacity: 1;
+
+    // }
+
+    .header-cart {
+        height: 0;
+        width: 400px;
+        // width: 0;
+        top: 80px;
+        right: -20px;
+        // display: none;
+        opacity: 0;
+        transition: all .25s;
+        // transform: ;
+    }
+
+}
+
+
+.gelatine {
+    animation: gelatine 0.5s;
+}
+
+@keyframes gelatine {
+
+    from,
+    to {
+        transform: scale(1, 1);
+    }
+
+    25% {
+        transform: scale(0.9, 1.1);
+    }
+
+    50% {
+        transform: scale(1.1, 0.9);
+    }
+
+    75% {
+        transform: scale(0.95, 1.05);
     }
 }
 

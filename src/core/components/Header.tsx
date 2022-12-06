@@ -1,6 +1,7 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { CartContext } from '../../shared/contexts/CartContext'
+import { CartContext } from '../../shared/contexts/CartContext';
+// import { CartContext } from '../../shared/contexts/CartContext'
 import { AuthContext } from '../context/AuthContext'
 
 /**
@@ -9,12 +10,31 @@ import { AuthContext } from '../context/AuthContext'
  * 
  */
 function Header() {
-  const { items } = useContext(CartContext)
-  console.log(items);
+  const { cart } = useContext(CartContext)
 
+  const [cartIsHighlighted, setCartIsHighlighted] = useState(false);
 
-  // const [cartCount, setCartCount] = useState(items.length)
+  const badgeClass = ` ${cartIsHighlighted ? 'gelatine' : ''}`;
 
+  const cartItemNumber = cart.reduce((count: any, curItem: { quantity: any; }) => {
+    return count + curItem.quantity;
+  }, 0)
+
+  useEffect(() => {
+
+    if (cart.length === 0) {
+      return;
+    }
+    setCartIsHighlighted(true);
+
+    const timer = setTimeout(() => {
+      setCartIsHighlighted(false);
+    }, 500);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [cart]);
 
   // const loginWithPopUp = () => {
   //   authService.signInWithGoogleAccount().then()
@@ -36,10 +56,16 @@ function Header() {
       <span className="mx-3 justify-content-center align-items-center d-none d-md-flex flex-item" onClick={() => { navigate('wishlist') }}>
         <span className="icon-heart fs-3"></span>
       </span>
-      <span className='mx-3 d-flex justify-content-center align-items-center flex-item position-relative' onClick={() => { navigate('cart') }}>
-        <small className='header-cart position-absolute bg-primary text-white  px-2 rounded-circle '>{items.length}</small>
+      <div className=' mx-3 d-flex justify-content-center align-items-center flex-item position-relative   py-4' onClick={() => { navigate('cart') }}>
+        {
+          cart.length > 0 &&
+          <small className={`${badgeClass} header-cart-badge position-absolute bg-primary text-white  text-center rounded-circle`}>{cartItemNumber}</small>
+        }
         <span className=" icon-cart  fs-3 "></span>
-      </span>
+        {/* <div className='header-cart position-absolute bg-white rounded-3 p-4 '>
+          {cart.length > 0 ? 'item' : <span className='text-muted'>No products in the cart.</span>}
+        </div> */}
+      </div>
       {!userAuthData &&
         <button className='btn btn-dark rounded-0 mx-3 px-md-4 py-md-2 flex-item' onClick={() => { navigate('/redirect') }}>LOGIN</button>
         // manual login email password 

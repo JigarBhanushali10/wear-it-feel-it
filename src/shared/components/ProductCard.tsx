@@ -1,15 +1,25 @@
-import React, { useContext } from 'react'
-import { CartContext } from '../contexts/CartContext'
+import { useContext } from 'react'
+import { CartContext } from '../contexts/CartContext';
 
 export const scrollsection = ((ref: any) => ref?.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }))
 
 function ProductCard(props: any) {
 
-    const { setItems } = useContext(CartContext)
-    const addToCart = () => {
-        setItems(props)
+    const { addProductToCart } = useContext(CartContext)
 
+    const addtocart = () => {
+        console.log('a',props);
+        
+        addProductToCart(props)
     }
+
+    // const { setItems } = useContext(CartContext)
+    // const addToCart = () => {
+    //     setItems(props)
+    //     console.log(props);
+
+
+    // }
 
     return (
         <div className='product-card-container' >
@@ -17,7 +27,7 @@ function ProductCard(props: any) {
                 <img className='img-fluid' src={props.jersey1} alt="argentina jersey" />
                 <img className='img-fluid' src={props.jersey2} alt="argentina jersey" />
                 <div className='product-card-controls position-absolute d-flex justify-content-around align-items-center fs-5 w-100 px-5 text-primary'>
-                    <span className="icon-cart p-2 p-md-3 ms-4 ms-sm-5 rounded-circle bg-white" onClick={addToCart}></span>
+                    <span className="icon-cart p-2 p-md-3 ms-4 ms-sm-5 rounded-circle bg-white" onClick={addtocart}></span>
                     <span className="icon-zoom-in p-2 p-md-3 rounded-circle bg-white"></span>
                     <span className="icon-heart p-2 p-md-3 me-4 me-sm-5 rounded-circle bg-white"></span>
                 </div>
@@ -40,3 +50,4 @@ function ProductCard(props: any) {
 }
 
 export default ProductCard
+
