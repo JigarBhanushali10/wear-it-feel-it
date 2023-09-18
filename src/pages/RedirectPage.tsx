@@ -1,34 +1,46 @@
-import { useContext, useEffect } from 'react'
-import { useLocation, useNavigate } from 'react-router'
-import { AuthContext } from '../core/context/AuthContext'
-import authService from '../core/services/Auth.service'
+import { useContext, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router";
+import { AuthContext } from "../core/context/AuthContext";
+import authService from "../core/services/Auth.service";
 
+const RedirectPage = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { storeUserAuthData } = useContext(AuthContext);
 
-const RedirectPage=()=> {
-    const location = useLocation()
-    const navigate = useNavigate()
-    const { storeUserAuthData } = useContext(AuthContext)
+  const redirectPath = location.state?.path;
 
-    const redirectPath = location.state?.path
-    useEffect(() => {
-/**
- * @name signInWithGoogleAccount 
- * @description firebase service to login using google account and redirect login to respective page
- */
-        authService.signInWithGoogleAccount().then((res:any) => {
-            storeUserAuthData(res.user)
-            if (!redirectPath) {
-                navigate('/')
-            } else {
-                navigate(redirectPath)
-            }
-        })
-        return () => {
+  /**
+   * @name signInWithGoogleAccount
+   * @description firebase service to login using google account and redirect login to respective page
+   */
+  function logIn() {
+    authService
+      .signInWithGoogleAccount()
+      .then((res: any) => {
+        console.log(res);
+
+        storeUserAuthData(res.user);
+        if (!redirectPath) {
+          navigate("/");
+        } else {
+          navigate(redirectPath);
         }
-    }, [redirectPath,storeUserAuthData,navigate])
-    return (
-        <div className='h-100'>Redirecting...</div>
-    )
-}
+      })
+      .catch(() => {
+        if (window.confirm("Login to your see your cart") === true) {
+          logIn();
+        } else {
+          navigate("/");
+        }
+      });
+  }
 
-export default RedirectPage
+  useEffect(() => {
+    logIn();
+    return () => {};
+  }, [redirectPath, storeUserAuthData, navigate]);
+  return <div className="h-100">Redirecting...</div>;
+};
+
+export default RedirectPage;
