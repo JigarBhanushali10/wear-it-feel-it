@@ -28,7 +28,7 @@ const RedirectPage = () => {
         }
       })
       .catch(() => {
-        if (window.confirm("Login to your see your cart") === true) {
+        if (window.confirm("Login to proceed further") === true) {
           logIn();
         } else {
           navigate("/");
